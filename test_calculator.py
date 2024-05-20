@@ -1,5 +1,6 @@
 import unittest
-from calculator import add, subtract
+from calculator import add, subtract  # Переконайтеся, що цей імпорт відповідає правильному модулю
+# Якщо вам потрібно тестувати calculator2.py також, імпортуйте спеціально і перейменуйте функції, щоб уникнути конфлікту.
 
 class TestCalculator(unittest.TestCase):
     def test_add(self):
@@ -10,17 +11,7 @@ class TestCalculator(unittest.TestCase):
         """Перевіряє, чи працює функція віднімання."""
         self.assertEqual(subtract(5, 2), 3)
 
-if name == 'main':
-    unittest.main()
+# Якщо є тести для calculator2, визначте інший клас TestCase тут або в іншому файлі.
 
-class TestCalculator2(unittest.TestCase):
-    def test_add(self):
-        """Перевіряє, чи працює функція додавання."""
-        self.assertEqual(add(3, 6), 9)
-
-    def test_subtract(self):
-        """Перевіряє, чи працює функція віднімання."""
-        self.assertEqual(subtract(5, 2), 3)
-
-if name == 'main':
+if __name__ == '__main__':  # Виправлена умова перевірки для запуску unittest
     unittest.main()
